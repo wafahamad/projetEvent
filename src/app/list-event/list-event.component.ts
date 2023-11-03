@@ -2,16 +2,15 @@ import { Component } from '@angular/core';
 import { EvenementService } from '../lesService/evenement.service';
 import { Event } from '../LesClasses/event';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-list-event',
+  templateUrl: './list-event.component.html',
+  styleUrls: ['./list-event.component.css']
 })
-export class HomeComponent {
+export class ListEventComponent {
   events!:Event[];
   constructor (private evn : EvenementService){};
 
   ngOnInit(): void {
     this.evn.getEvenements().subscribe((data) =>(this.events=data));
   }
-
 }

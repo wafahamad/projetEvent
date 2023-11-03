@@ -7,7 +7,7 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">LogIn Now</h2>
-            <form >
+            <form [formGroup]="loginForm"  >
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
@@ -42,7 +42,7 @@
                 <label class="form-label" for="form3Example4">Password</label>
               </div>
 
-             
+
 
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4" >
@@ -52,9 +52,9 @@
               <a routerLink="/dashboard/signup">SignUp</a>
               <br>
               <a routerLink="/dashboard/changePwd">Change Password</a>
-            
+
             </form>
-            
+
           </div>
         </div>
       </div>

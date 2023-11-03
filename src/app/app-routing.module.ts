@@ -4,6 +4,7 @@ import { DashboardClientComponent } from './dashboard-client/dashboard-client.co
 import { HomeComponent } from './home/home.component';
 import { LoginParticipantComponent } from './login-participant/login-participant.component';
 import { SignUpParComponent } from './sign-up-par/sign-up-par.component';
+import { ListEventComponent } from './list-event/list-event.component';
 
 const routes: Routes = [
   {path:'',
@@ -15,7 +16,8 @@ const routes: Routes = [
             {path:'', redirectTo:'home',pathMatch:'full'},
             {path:'home',component:HomeComponent},
             {path:'loginP',title:'login',component:LoginParticipantComponent},
-            {path:'signup',title:'signup',component:SignUpParComponent}
+            {path:'signup',title:'signup',component:SignUpParComponent},
+            {path:'listEvent',title:'',component:ListEventComponent}
       ]
     }
   ]

@@ -13,6 +13,8 @@ import { LoginParticipantComponent } from './login-participant/login-participant
 import { DashboardClientComponent } from './dashboard-client/dashboard-client.component';
 import { NavComponent } from './nav/nav.component';
 import { SignUpParComponent } from './sign-up-par/sign-up-par.component';
+import { EvenementComponent } from './evenement/evenement.component';
+import { ListEventComponent } from './list-event/list-event.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { SignUpParComponent } from './sign-up-par/sign-up-par.component';
     DashboardClientComponent,
     NavComponent,
     SignUpParComponent,
+    EvenementComponent,
+    ListEventComponent,
    
   ],
   imports: [

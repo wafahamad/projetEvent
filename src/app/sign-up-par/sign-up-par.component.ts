@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginParService } from '../lesService/login-par.service';
 import { Paricipant } from '../LesClasses/paricipant';
-import { EventService } from '../lesService/event.service';
+import { ParticipantService } from '../lesService/participant.service';
 
 @Component({
   selector: 'app-sign-up-par',
@@ -11,51 +11,48 @@ import { EventService } from '../lesService/event.service';
 })
 export class SignUpParComponent implements OnInit {
   loginForm !: FormGroup;
-  AllParticipant : Paricipant []=[];
-  constructor(private fb :FormBuilder,private loginservice:LoginParService,private ev:EventService){}
+  AllParticipant! : Paricipant[];
+  constructor(private fb :FormBuilder,private loginservice:LoginParService,private par:ParticipantService){}
   ngOnInit(): void {
-    this.loginservice.getLoginPar().subscribe((data:any)=>{
-      this.AllParticipant = data
-    })
+    this.par.getParticipant().subscribe(
+      data => this.AllParticipant = data
+    )
+    this.createForm();
 
-    this.initLoginPForm();
   }
-  initLoginPForm(){
-    this.loginForm = this.fb.nonNullable.group({
-      id : [],
-      e_mail : ['',Validators.required],
-      pwd : ['',Validators.required],
-      nom:['',Validators.required],
-      cin:[,Validators.required],
-      age:[,Validators.required],
-      prenom:['',Validators.required]
-
-    });
-    this.ev.getParticipant().subscribe((res:any)=>{
-      this.AllParticipant = res;
-    })
+createForm()
+{
+  this.loginForm = this.fb.nonNullable.group({
+    id : [],
+    e_mail : ['',Validators.required],
+    pwd : ['',Validators.required],
+    nom:['',Validators.required],
+    cin:[,Validators.required],
+    age:[,Validators.required],
+    prenom:['',Validators.required]}
+  )
 }
-  public get nom(){ 
-    return this.loginForm.get('nom'); 
+  public get nom(){
+    return this.loginForm.get('nom');
   }
-  public get prenom(){ 
-    return this.loginForm.get('prenom'); 
+  public get prenom(){
+    return this.loginForm.get('prenom');
   }
-  public get age(){ 
-    return this.loginForm.get('age'); 
+  public get age(){
+    return this.loginForm.get('age');
   }
-  public get pwd(){ 
-    return this.loginForm.get('pwd'); 
+  public get pwd(){
+    return this.loginForm.get('pwd');
   }
-  public get e_mail(){ 
-    return this.loginForm.get('e_mail'); 
+  public get e_mail(){
+    return this.loginForm.get('e_mail');
   }
-  public get cin(){ 
-    return this.loginForm.get('cin'); 
+  public get cin(){
+    return this.loginForm.get('cin');
   }
+
   CreateParticipant(){
-    this.ev.addParticipant(this.loginForm.value).subscribe((data:any)=>this.AllParticipant.push(data)) 
+    this.par.addParticipant(this.loginForm.value).subscribe( paricipant=> this.AllParticipant.push(paricipant))
     alert("Welcom too Event.com! You are our client Now");
-    alert(this.AllParticipant);
   }
 }

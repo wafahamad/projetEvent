@@ -1,19 +1,13 @@
 {
-  "posts": [
+  "particpants": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "2",
+      "e_mail": "hamraoui@gmail.com",
+      "pwd": "1234",
+      "nom": "hamraoui",
+      "cin": 1254369,
+      "age": 21,
+      "prenom": "eya"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
