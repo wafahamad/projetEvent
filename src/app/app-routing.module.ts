@@ -5,6 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginParticipantComponent } from './login-participant/login-participant.component';
 import { SignUpParComponent } from './sign-up-par/sign-up-par.component';
 import { ListEventComponent } from './list-event/list-event.component';
+import { EvenementComponent } from './evenement/evenement.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ParticipationComponent } from './participation/participation.component';
 
 const routes: Routes = [
   {path:'',
@@ -17,7 +20,9 @@ const routes: Routes = [
             {path:'home',component:HomeComponent},
             {path:'loginP',title:'login',component:LoginParticipantComponent},
             {path:'signup',title:'signup',component:SignUpParComponent},
-            {path:'listEvent',title:'',component:ListEventComponent}
+            {path:'home/:id',title:'',component:EvenementComponent},
+            {path:'about',title:'about',component:AboutusComponent},
+            {path:'participation/:id',title:'participation',component:ParticipationComponent}
       ]
     }
   ]

@@ -15,6 +15,8 @@ import { NavComponent } from './nav/nav.component';
 import { SignUpParComponent } from './sign-up-par/sign-up-par.component';
 import { EvenementComponent } from './evenement/evenement.component';
 import { ListEventComponent } from './list-event/list-event.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ParticipationComponent } from './participation/participation.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { ListEventComponent } from './list-event/list-event.component';
     SignUpParComponent,
     EvenementComponent,
     ListEventComponent,
+    AboutusComponent,
+    ParticipationComponent,
    
   ],
   imports: [
