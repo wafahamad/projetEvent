@@ -36,10 +36,10 @@
                           
                         
                         <label> participant's identifier</label><select formControlName="participant">
-                          <option *ngFor="let p of CurrentParticipant" [ngValue]="p">{{ p.id }}</option>
+                          <option *ngFor="let p of CurrentParticipant" [ngValue]="p">{{ p.idP }}</option>
                         </select>
                         <label> Cinema's identifier</label><select formControlName="event">
-                          <option *ngFor="let g of CurrentEvent" [ngValue] = "g" >{{g.id}}</option>
+                          <option *ngFor="let g of CurrentEvent" [ngValue] = "g" >{{g.idE}}</option>
                       </select>
                       <div class="px-2 mt-3">
                         <button [disabled]="ParForm.invalid" class="btn btn-primary px-3">participer Now</button>

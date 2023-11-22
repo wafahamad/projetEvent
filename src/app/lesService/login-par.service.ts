@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginParService {
-  public isconnectedP=false;
   public isconnectedA=false;
   public isconnectedC=false;
 
@@ -15,5 +14,8 @@ export class LoginParService {
     getLoginPar(){
       return this.http.get<any>('http://localhost:3000/participants');
     }
+    getLoginAdmin(){
+      return this.http.get<any>('http://localhost:3000/organisations');
+   }
   
 }

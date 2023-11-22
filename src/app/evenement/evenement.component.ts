@@ -22,6 +22,7 @@ export class EvenementComponent implements OnInit {
   getMoreInfo(id:number){
     
       this.route.navigate(['/dashboard/participation',id]);
+      
   }
 
 }

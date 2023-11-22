@@ -20,20 +20,20 @@
       </div>
     </div>
   </div>
-</section>
+</section> 
 <div class="container" >
   <ul class="row justify-content-center align-items-center" style="list-style: none;">
     <li *ngFor="let a of events" class="col-sm">
       <div class="flip-card" style="width: 18rem;">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <p class="card-title">{{a.name}}</p>
+                <p class="card-title">{{a.nom}}</p>
       
             </div>
             <div class="flip-card-back">
               <img [src]="a.img" style=" border-radius: 10px; width: 200px; height: 200px; margin-left: 43px;
               margin-bottom: 20px;">
-                <a (click)="getMoreInfo(a,a.id)"  class="tm-page-link">See More</a>
+                <a (click)="getMoreInfo(a,a.idE)"  class="tm-page-link">See More</a>
       
             </div>
         </div>

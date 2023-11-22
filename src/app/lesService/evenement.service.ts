@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Event } from '../LesClasses/event';
 import { Paricipant } from '../LesClasses/paricipant';
 
-const url="http://localhost:3000/events"
+const url="http://localhost:3000/evenements"
 const urlP="http://localhost:3000/participants"
 
 @Injectable({
@@ -21,7 +21,7 @@ export class EvenementService {
   }
   getEvenements():Observable<Event[]>
   {
-    return this.http.get<Event[]>(url);
+    return this.http.get<Event[]>('http://localhost:3000/evenements');
   }
 
   getEvenementById(id:number):Observable<Event>

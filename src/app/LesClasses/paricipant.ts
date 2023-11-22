@@ -1,6 +1,6 @@
 export class Paricipant {
     constructor(
-        public id:number,
+        public idP:number,
         public nom:string,
         public prenom:string,
         public cin:number,
