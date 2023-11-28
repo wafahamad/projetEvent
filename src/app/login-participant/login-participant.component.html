@@ -8,32 +8,10 @@
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">LogIn Now</h2>
             <form [formGroup]="loginForm"  >
-              <!-- 2 column grid layout with text inputs for the first and last names -->
-              <div class="row">
-                <div class="col-md-6 mb-4">
-                  <div class="form-outline">
-                    <input type="text" id="form3Example1" class="form-control" formControlName='id' required />
-                    <label class="form-label" for="form3Example1">identifier</label>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                  <div class="form-outline">
-                    <input type="text" id="form3Example1" class="form-control" formControlName='prenom' required />
-                    <label class="form-label" for="form3Example1">First name</label>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                  <div class="form-outline">
-                    <input type="text" id="form3Example2" class="form-control" formControlName='nom' required/>
-                    <label class="form-label" for="form3Example2">Last name</label>
-                  </div>
-                </div>
-              </div>
-
               <!-- e_mail input -->
               <div class="form-outline mb-4">
                 <input type="e_mail" id="form3Example3" class="form-control" formControlName='e_mail' required />
-                <label class="form-label" for="form3Example3">e_mail address</label>
+                <label class="form-label" for="form3Example3">E-mail</label>
               </div>
 
               <!-- Password input -->

@@ -6,11 +6,11 @@ const { generateToken } = require('../utils/jwt');
 const router = express.Router();
 
 router.post('/register', async (req, res) => {
-  const { e_mail, pwd } = req.body;
+  const { e_mail, pwd ,nom,prenom,age,cin} = req.body;
 
   try {
     const hashedPassword = await bcrypt.hash(pwd, 10);
-    const participant = new Participant({ e_mail, pwd: hashedPassword });
+    const participant = new Participant({ e_mail, pwd: hashedPassword ,nom,prenom,age,cin});
     await participant.save();
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {

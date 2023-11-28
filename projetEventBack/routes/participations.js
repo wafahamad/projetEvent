@@ -12,7 +12,7 @@ function generateParticipationsId() {
   }
 
 
-  router.post('/ajout', authenticateToken,async (req, res, next) => {
+  router.post('/ajoutParticipation', authenticateToken,async (req, res, next) => {
     try {
       const { idP, idE } = req.body;
   

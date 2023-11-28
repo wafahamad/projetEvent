@@ -13,20 +13,29 @@ const urlP="http://localhost:3000/participants"
 export class EvenementService {
 
   constructor(private http:HttpClient) { }
-  getParticipant():Observable<Paricipant[]>{
-    return this.http.get<Paricipant[]>(urlP)  
-  }
-  getParticipantById(id:number):Observable<Paricipant>{
-    return this.http.get<Paricipant>(urlP+id)  
-  }
-  getEvenements():Observable<Event[]>
-  {
-    return this.http.get<Event[]>('http://localhost:3000/evenements');
+  getEvents(): Observable<Event[]> {
+    return this.http.get<Event[]>(${apiUrl}/evenements);
   }
 
-  getEvenementById(id:number):Observable<Event>
-  {
-    return this.http.get<Event>(url+"/"+id);
+  // Get event by ID
+  getEventById(id: number): Observable<Event> {
+    return this.http.get<Event>(${apiUrl}/evenements/${id});
   }
+
+  // Add a new event
+  addEvent(event: Event): Observable<Event> {
+    return this.http.post<Event>(${apiUrl}/evenements/ajout, event);
+  }
+
+  // Update an event by ID
+  updateEvent(id: number, event: Event): Observable<Event> {
+    return this.http.put<Event>(${apiUrl}/evenements/${id}, event);
+  }
+
+  // Delete an event by ID
+  deleteEvent(id: number): Observable<any> {
+    return this.http.delete<any>(${apiUrl}/evenements/${id});
+  }
+
 }
 

@@ -12,9 +12,9 @@ import { ParticipantService } from '../lesService/participant.service';
 export class SignUpParComponent implements OnInit {
   loginForm !: FormGroup;
   AllParticipant! : Paricipant[];
-  constructor(private fb :FormBuilder,private loginservice:LoginParService,private par:ParticipantService){}
+  constructor(private fb :FormBuilder, private par:ParticipantService){}
   ngOnInit(): void {
-    this.par.getParticipant().subscribe(
+    this.par.getParticipants().subscribe(
       data => this.AllParticipant = data
     )
     this.createForm();
@@ -44,7 +44,7 @@ createForm()
   public get pwd(){
     return this.loginForm.get('pwd');
   }
-  public get e_mail(){
+  public get email(){
     return this.loginForm.get('e_mail');
   }
   public get cin(){
@@ -52,7 +52,7 @@ createForm()
   }
 
   CreateParticipant(){
-    this.par.addParticipant(this.loginForm.value).subscribe( paricipant=> this.AllParticipant.push(paricipant))
+    this.par.registerParticipant(this.email,this.pwd,this.nom,this.prenom,this.age,this.cin).subscribe( paricipant=> this.AllParticipant.push(paricipant))
     alert("Welcom too Event.com! You are our client Now");
   }
 }
