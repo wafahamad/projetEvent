@@ -61,3 +61,12 @@
        rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
     color: coral;
   }
+  .btn.btn-secondary {
+    /* Add your styling here */
+    background-color: rgb(255, 140, 0), 115, 0; /* Example background color */
+    color: #ffffff; /* Example text color */
+    padding: 10px 20px; /* Example padding */
+    text-decoration: none; /* Remove default underline */
+    border-radius: 5px; /* Example border radius */
+    display: inline-block; /* Make it a block-level element */
+}
