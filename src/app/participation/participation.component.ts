@@ -8,6 +8,7 @@ import { ParticipationService } from '../lesService/participation.service';
 import { EvenementService } from '../lesService/evenement.service';
 import { LoginParService } from '../lesService/login-par.service';
 import { ParticipantService } from '../lesService/participant.service';
+import { Token } from '@angular/compiler';
 
 @Component({
   selector: 'app-participation',
@@ -15,12 +16,12 @@ import { ParticipantService } from '../lesService/participant.service';
   styleUrls: ['./participation.component.css'],
 })
 export class ParticipationComponent implements OnInit {
-  idE!: number;
+  idE!: string;
   data: any;
   ParForm!: FormGroup;
   partById!: Participant;
   eventById!: Event;
-  idAuth!: number;
+  idAuth!: any;
   participations: Participation[] = [];
 
   constructor(
@@ -34,10 +35,11 @@ export class ParticipationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.idE = this.activatedRoute.snapshot.params['idE'];
+    this.idE = this.activatedRoute.snapshot.params['id'];
+    console.log(this.idE);
     this.getEvent();
 
-    this.idAuth = Number(localStorage.getItem('user-id'));
+    this.idAuth = localStorage.getItem('token');
     this.par
       .getParticipantById(this.idAuth)
       .subscribe((data: Participant) => {
@@ -57,11 +59,7 @@ export class ParticipationComponent implements OnInit {
     this.ParForm = this.fb.group({
       datePar: [new Date()],
       nbPrs: [0],
-      participant: [],
-      event: [],
-      email: [localStorage.getItem('user-email')],
-      nom: [localStorage.getItem('user-nom')],
-      prenom: [localStorage.getItem('user-prenom')],
+      
     });
   }
 
@@ -76,7 +74,8 @@ export class ParticipationComponent implements OnInit {
   }
 
   getParticiper() {
-    this.ps.addParticipation(this.ParForm.value).subscribe(
+    console.log(this.idAuth);
+    this.ps.addParticipation(this.ParForm.value,this.idE,this.idAuth).subscribe(
       (data) => {
         this.participations.push(data);
         alert('Participation faite avec succès !');

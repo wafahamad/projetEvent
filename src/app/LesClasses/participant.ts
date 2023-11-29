@@ -1,5 +1,6 @@
 export class Participant {
     constructor(
+        public _id:string,
         public idP:number,
         public nom:string,
         public prenom:string,

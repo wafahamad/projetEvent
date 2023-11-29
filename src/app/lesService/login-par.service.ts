@@ -13,8 +13,8 @@ export class LoginParService {
   successParticipant!: boolean;
   constructor(private http:HttpClient) { }
 
-  authenticate(email: string, password: string): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>(
+  authenticate(email: string, password: string): Observable<any> {
+    return this.http.post<any>(
       `${this.apiUrl}/login`,
       {
         e_mail: email,  // Fix the field name to match the server

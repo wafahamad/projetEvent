@@ -18,7 +18,7 @@ export class HomeComponent {
     console.log(localStorage.getItem('user-email'))
     this.evn.getEvents().subscribe((data:any) =>(this.events=data));
   }
-  getMoreInfo(e:Event,id:number){
+  getMoreInfo(e:Event,id:string){
     if(e.disponible==false){
        
     alert("this Event is not available!");}

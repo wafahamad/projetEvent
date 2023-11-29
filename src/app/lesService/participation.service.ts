@@ -18,8 +18,12 @@ private apiUrl="http://localhost:3000/participations"
     return this.http.get<Participation[]>(`${this.apiUrl}/parEvent/${id}`);
   }
 
-  addParticipation(p: Participation): Observable<Participation> {
-    return this.http.post<Participation>('http://localhost:3000/participations/ajout', p);
+  addParticipation(p: Participation , idevent:string,token:string): Observable<Participation> {
+     const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `${token}`
+    })
+    return this.http.post<Participation>('http://localhost:3000/participations/ajout/'+idevent, p,{headers:headers});
   }
   getParticipationByClient(id: number): Observable<Participation[]> {
     return this.http.get<Participation[]>(`http://localhost:3000/participations/participant/${id}`);

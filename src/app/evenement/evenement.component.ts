@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EvenementComponent implements OnInit {
   event!:Event;
-  id!:number;
+  id!:string;
   constructor(private activatedRoute:ActivatedRoute,private ev:EvenementService,private route:Router) { }
 
   ngOnInit(): void {
@@ -19,7 +19,7 @@ export class EvenementComponent implements OnInit {
     this.ev.getEventById(this.id).subscribe(data =>this.event=data);
   }
 
-  getMoreInfo(id:number){
+  getMoreInfo(id:string){
     
       this.route.navigate(['/dashboard/participation',id]);
       

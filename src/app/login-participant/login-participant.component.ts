@@ -34,6 +34,7 @@ export class LoginParticipantComponent implements OnInit {
   }
 
   onSubmit() {
+   
     if (this.email && this.password) { // Check for null values directly
 
       const userEmail = this.email.value;
@@ -41,21 +42,15 @@ export class LoginParticipantComponent implements OnInit {
 
       this.loginService.authenticate(userEmail, passwordEmail).subscribe(
         (response) => {
-          if (response.token) {
-            localStorage.setItem('token', response.token);
+          console.log(JSON.parse(response)["token"]);
+          
+            
+            localStorage.setItem('token', JSON.parse(response)["token"]);
+            this.router.navigate(['/dashboard/home']);
 
-            this.loginService.authenticatedRequest('/dashboard/home').subscribe(
-              () => {
-                this.router.navigate(['dashboard/home']);
-              },
-              (error) => {
-                console.error('Error in authenticated request:', error);
-              }
-            );
-          } else {
-            this.errorMessage = 'Invalid response from the server';
-          }
-        },
+
+        
+      },
         (error) => {
           console.error('Invalid username or password', error);
           // Handle error if needed
