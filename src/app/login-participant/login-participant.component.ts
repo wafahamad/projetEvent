@@ -44,7 +44,7 @@ export class LoginParticipantComponent implements OnInit {
           if (response.token) {
             localStorage.setItem('token', response.token);
 
-            this.loginService.authenticatedRequest('dashboard/home').subscribe(
+            this.loginService.authenticatedRequest('/dashboard/home').subscribe(
               () => {
                 this.router.navigate(['dashboard/home']);
               },
