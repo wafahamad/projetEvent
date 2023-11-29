@@ -35,9 +35,9 @@
 
 
 
-                        <label> participant's identifier</label><select formControlName="participant">
+                       <!--<label> participant's identifier</label><select formControlName="participant">
                           <option *ngFor="let p of CurrentParticipant" [ngValue]="p">{{ p.idP }}</option>
-                        </select>
+                        </select>--> 
                       <div class="px-2 mt-3">
                         <button [disabled]="ParForm.invalid" class="btn btn-primary px-3">participer Now</button>
                         <button class="btn btn-outline-primary px-3" (click)="goback()">Back</button>

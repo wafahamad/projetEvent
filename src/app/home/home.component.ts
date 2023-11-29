@@ -16,7 +16,7 @@ export class HomeComponent {
      console.log(localStorage.getItem('user-nom'))
     console.log(localStorage.getItem('user-prenom'))
     console.log(localStorage.getItem('user-email'))
-    this.evn.getEvenements().subscribe((data:any) =>(this.events=data));
+    this.evn.getEvents().subscribe((data:any) =>(this.events=data));
   }
   getMoreInfo(e:Event,id:number){
     if(e.disponible==false){

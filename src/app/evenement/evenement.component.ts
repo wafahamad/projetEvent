@@ -16,7 +16,7 @@ export class EvenementComponent implements OnInit {
   ngOnInit(): void {
     this.id=this.activatedRoute.snapshot.params['id'];
 
-    this.ev.getEvenementById(this.id).subscribe(data =>this.event=data);
+    this.ev.getEventById(this.id).subscribe(data =>this.event=data);
   }
 
   getMoreInfo(id:number){

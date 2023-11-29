@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { Paricipant } from 'src/app/LesClasses/paricipant';
+import { Participant } from 'src/app/LesClasses/participant';
 import { Observable } from "rxjs";
 import { ParticipantService } from 'src/app/lesService/participant.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-participants',
@@ -10,7 +12,7 @@ import { ParticipantService } from 'src/app/lesService/participant.service';
 })
 export class ParticipantsComponent {
 
-  participants!: Observable<Paricipant[]>;
+  participants!: Observable<Participant[]>;
 
   constructor (private parService:ParticipantService,private router: Router) {}
 

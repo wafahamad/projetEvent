@@ -14,9 +14,7 @@ export class NavComponent  implements OnInit{
   }
   exit() {
     confirm("Are you sure?");
-  
-    // Réinitialiser l'état de connexion dans le service
-    this.ls.isconnectedC = false;
+    
   
     // Supprimer la clé isConnected du localStorage
     localStorage.removeItem('isConnected');

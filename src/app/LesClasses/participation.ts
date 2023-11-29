@@ -1,12 +1,12 @@
 import { Event } from "./event";
-import { Paricipant } from "./paricipant";
+import { Participant } from "./participant";
 
 export class Participation {
     constructor(
-        public idP: number,
-        public datePar:Date,
+        public id: string,
+        public date:Date,
         public nbPrs:number,
-        public Paricipatn: Paricipant,
-        public event: Event
+        public participant: Participant,
+        public evenement: Event
     ){}
 }

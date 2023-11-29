@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,17 +8,17 @@ import { Injectable } from '@angular/core';
 export class LoginParService {
  // public isconnectedA=false;
  // public isconnectedC=false;
- private apiUrl= 'http://localhost:3000/';
+ private apiUrl= 'http://localhost:3000/auth';
   success!: boolean;
   successParticipant!: boolean;
   constructor(private http:HttpClient) { }
 
-  authenticate(email: string, password: string): Observable<string> {
-    return this.http.post<string>(
+  authenticate(email: string, password: string): Observable<{ token: string }> {
+    return this.http.post<{ token: string }>(
       `${this.apiUrl}/login`,
       {
-        email,
-        password,
+        e_mail: email,  // Fix the field name to match the server
+        pwd: password,
       },
       {
         responseType: 'text' as 'json',

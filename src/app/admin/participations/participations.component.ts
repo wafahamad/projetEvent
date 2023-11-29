@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Participation } from 'src/app/LesClasses/participation';
 import { ParticipationService } from "src/app/lesService/participation.service";
 

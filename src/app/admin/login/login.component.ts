@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {AdminAuthService } from "./admin-auth.service";
+import { Router } from '@angular/router';
+import { AdminAuthService } from '../admin-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.adminAuthService.login(this.email, this.password)) {
-      this.router.navigate(['/admin/dashboard']);
+      this.router.navigate(['admin/dashboard']);
     } else {
       // Handle login failure (e.g., show error message)
       console.error('Login failed. Incorrect credentials.');

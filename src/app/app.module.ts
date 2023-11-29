@@ -17,6 +17,10 @@ import { EvenementComponent } from './evenement/evenement.component';
 import { ListEventComponent } from './list-event/list-event.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ParticipationComponent } from './participation/participation.component';
+import { AdminModule } from './admin/admin.module';
+import { ListParticipantsComponent } from './list-participants/list-participants.component';
+import { ListParticipationsComponent } from './list-participations/list-participations.component';
+import { HomeOrganisationComponent } from './home-organisation/home-organisation.component'; // Import AdminModule
 
 
 @NgModule({
@@ -32,16 +36,19 @@ import { ParticipationComponent } from './participation/participation.component'
     ListEventComponent,
     AboutusComponent,
     ParticipationComponent,
+    ListParticipantsComponent,
+    ListParticipationsComponent,
+    HomeOrganisationComponent,
    
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     HttpClientModule, 
     ReactiveFormsModule,
     CommonModule,
-    FormsModule
-  ],
+    FormsModule,
+    BrowserModule,
+    AppRoutingModule,
+    AdminModule,  ],
   providers: [],
   bootstrap: [AppComponent]
 })

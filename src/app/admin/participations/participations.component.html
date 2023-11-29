@@ -17,13 +17,13 @@
       <tbody>
         <tr *ngFor="let particip of participations | async">
           <td>{{particip.idP}}</td>
-          <td>{{particip.datePar}} {{par.prenom}}</td>
+          <td>{{particip.datePar}} {{particip.prenom}}</td>
           <td>{{particip.nbPrs}}</td>
           <td>{{particip.Paricipatn}}</td>
           <td>{{particip.Paricipatn}}</td>
           <td>
-            <button (click)="deleteParticipation(participation.idP)" class="btn btn-danger"
-                   style="margin-left: 10px">Supprimer</button>
+            <!-- <button (click)="deleteParticipation(participation.idP)" class="btn btn-danger" 
+                   style="margin-left: 10px">Supprimer</button> -->
           </td>
         </tr>
       </tbody>

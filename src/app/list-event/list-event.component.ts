@@ -11,6 +11,6 @@ export class ListEventComponent {
   constructor (private evn : EvenementService){};
 
   ngOnInit(): void {
-    this.evn.getEvenements().subscribe((data) =>(this.events=data));
+    this.evn.getEvents().subscribe((data) =>(this.events=data));
   }
 }

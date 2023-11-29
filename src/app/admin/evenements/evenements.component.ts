@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {EvenementService } from "src/app/lesServices/evenementService";
+import { Router } from '@angular/router';
+import { EvenementService } from 'src/app/lesService/evenement.service';
 @Component({
   selector: 'app-evenements',
   templateUrl: './evenements.component.html',
@@ -7,7 +8,7 @@ import {EvenementService } from "src/app/lesServices/evenementService";
 })
 export class EvenementsComponent {
 
-  events: Event[] = [];
+  events: any ;
 
   constructor(private router: Router, private evenementService: EvenementService) {}
 
@@ -17,10 +18,10 @@ export class EvenementsComponent {
 
   loadEvents(): void {
     this.evenementService.getEvents().subscribe(
-      (data: Event[]) => {
+      (data) => {
         this.events = data;
       },
-      (error) => {
+      (error: any) => {
         console.error('Error fetching events:', error);
       }
     );
